@@ -36,6 +36,9 @@ export class UserController {
 				where: {
 					id: userId,
 				},
+				include: {
+					Products: true,
+				}
 			});
 
 			response.status(201).json(foundUser);
