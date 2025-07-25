@@ -14,4 +14,33 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+model User {
+  id        String   @id @default(uuid())
+  name      String
+  email     String   
+  age       Int
+  phone    String
+  CPF       String   
+  adress    String
+  
+  Products  Product[]
+  Pedidos   Pedido[]
+}
 
+model Product {
+  id          String      @id @default(uuid())
+  name        String
+  category    String
+  state       String
+  ownerId     String
+  date        String
+  owner       User        @relation(fields: [ownerId], references: [id])
+}
+
+model Pedido{
+  id          String      @id @default(uuid())
+  status      String
+  date        String
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}

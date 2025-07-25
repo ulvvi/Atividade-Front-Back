@@ -3,18 +3,19 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node server.ts"
   },
-
   "prisma": {
-    "schema": "src/models/schema.prisma"
+    "schema": "src/models/schema.prisma",
+    "seed": "ts-node src/models/seed/seeder.ts"
   },
-
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
+    "@faker-js/faker": "^9.9.0",
     "@prisma/client": "^6.12.0",
     "@types/express": "^5.0.3",
     "cors": "^2.8.5",
@@ -23,5 +24,12 @@
     "prisma": "^6.12.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "dom": "^0.0.3",
+    "faker-br": "^0.5.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-router-dom": "^7.7.1"
   }
 }
