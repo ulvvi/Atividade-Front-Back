@@ -30,6 +30,7 @@ export class UserController {
 	public static async readUser(request: Request, response: Response) {
 		try {
 			const { userId } = request.params;
+			console.log("Fetching user with ID:", userId);
 
 			const foundUser = await prisma.user.findUnique({
 				where: {
