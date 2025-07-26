@@ -1,6 +1,8 @@
 import Input from "../components/input.tsx";
 import Header from "../components/header.tsx"
 import Socialmedia from "../components/socialmedia.tsx";
+import Button from "../components/Button.tsx";
+
 
 
 export default function Cadastro() {
@@ -18,11 +20,8 @@ export default function Cadastro() {
                 <Input type="Senha" placeholder="Digite sua senha"/>
                 <Input type="Confirme sua senha" placeholder="Confirme sua senha"/>
             </form>
-            <button className="w-[188px] h-[40px] bg-[#2B2B2B] text-white 
-            p-10px rounded-[16px] text-[14px] hover:bg-black
-            absolute top-[698px]">Cadastrar-se!</button>
+            <Button title="Cadastrar-se!"/>
         </div>
-
     </div>
     );
 }
