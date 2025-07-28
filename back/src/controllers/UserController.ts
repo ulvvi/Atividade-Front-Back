@@ -6,7 +6,7 @@ const prisma = new PrismaClient();
 export class UserController {
 	public static async createUser(request: Request, response: Response) {
 		try {
-			const { name, email, age, phone, CPF, adress } = request.body;
+			const { name, email, age, phone, CPF, adress, isRegisteredVendor } = request.body;
 
 			const createInput: Prisma.UserCreateInput = {
 				name: name,
@@ -15,6 +15,7 @@ export class UserController {
                 phone: phone,
                 CPF: CPF,
                 adress: adress,
+				isRegisteredVendor: isRegisteredVendor, 
 			};
 
 			const createdUser = await prisma.user.create({
@@ -60,7 +61,7 @@ export class UserController {
 	public static async updateUser(request: Request, response: Response) {
 		try {
 			const { userId } = request.params;
-			const { name, email, age, phone, CPF, adress } = request.body;
+			const { name, email, age, phone, CPF, adress, isRegisteredVendor } = request.body;
 
 			const createInput: Prisma.UserUpdateInput = {
 				name: name,
@@ -69,6 +70,7 @@ export class UserController {
                 phone: phone,
                 CPF: CPF,
                 adress: adress,
+				isRegisteredVendor: isRegisteredVendor,
 			};
 
 			const updatedUser = await prisma.user.update({
@@ -87,15 +89,16 @@ export class UserController {
 	public static async upsertUser(request: Request, response: Response) {
 		try {
 			const { userId } = request.params;
-			const { name, email, age, phone, Cpf, adress } = request.body;
+			const { name, email, age, phone, CPF, adress, isRegisteredVendor } = request.body;
 
 			const createInput: Prisma.UserCreateInput = {
 				name: name,
 				email: email,
 				age: age,
 				phone: phone,
-				CPF: Cpf,
+				CPF: CPF,
 				adress: adress,
+				isRegisteredVendor: isRegisteredVendor,
 			};
 
 			const updateInput: Prisma.UserUpdateInput = {
@@ -103,8 +106,9 @@ export class UserController {
 				email: email,
                 age: age,
                 phone: phone,
-                CPF: Cpf,
+                CPF: CPF,
                 adress: adress,
+				isRegisteredVendor: isRegisteredVendor,
 			};
 
 			const upsertedUser = await prisma.user.upsert({
