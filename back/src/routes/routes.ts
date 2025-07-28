@@ -2,6 +2,8 @@ import {Router} from "express";
 import { UserController } from "../controllers/userController";
 import { ProductController } from "../controllers/productController";
 import { VendorOnly } from "../middlewares/VendorOnly";
+import { PedidoController } from "../controllers/pedidoController";
+
 
 const router = Router()
 
@@ -21,7 +23,13 @@ router.put("/product/:productId", ProductController.updateProduct);
 router.post("/product/upsert/:productId", ProductController.upsertProduct);
 router.delete("/product/:productId", ProductController.deleteProduct);
 
-
-
+//Pedido routes
+router.post("/pedido", PedidoController.createPedido); 
+router.get("/pedido/:pedidoId", PedidoController.readPedido);
+router.get("/pedidos", PedidoController.readAllPedidos);
+router.put("/pedido/:pedidoId", PedidoController.updatePedido);
+router.post("/pedido/upsert/:pedidoId", PedidoController.upsertPedido);
+router.delete("/pedido/:pedidoId", PedidoController.deletePedido);
+router.delete("/pedidos", PedidoController.deleteAllPedidos); 
 
 export default router;

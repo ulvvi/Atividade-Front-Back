@@ -9,16 +9,16 @@ datasource db {
 }
 
 model User {
-  id       String    @id @default(uuid())
+  id       String    @id @default(uuid()) @unique
   name     String
   email    String
   CPF      String
   adress   String
   age      Int
   phone    String
+  isRegisteredVendor Boolean @default(false)
   Pedidos  Pedido[]
   Products Product[]
-  isRegisteredVendor Boolean @default(false)
 }
 
 model Product {
@@ -28,7 +28,9 @@ model Product {
   state    String
   ownerId  String
   date     String
+  pedidoId String?
   owner    User   @relation(fields: [ownerId], references: [id])
+  pedido  Pedido? @relation(fields: [pedidoId], references: [id])
 }
 
 model Pedido {
@@ -38,4 +40,5 @@ model Pedido {
   price  Float
   userId String
   user   User   @relation(fields: [userId], references: [id])
+  products Product[]
 }

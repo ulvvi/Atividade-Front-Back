@@ -39,6 +39,7 @@ export class UserController {
 				},
 				include: {
 					Products: true,
+					Pedidos: true,
 				}
 			});
 

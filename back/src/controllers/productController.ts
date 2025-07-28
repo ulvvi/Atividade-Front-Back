@@ -37,7 +37,7 @@ export class ProductController {
                     id: productId,
                 },
                 include: {
-                    owner: true
+                    owner: true,
                 }
             });
 
