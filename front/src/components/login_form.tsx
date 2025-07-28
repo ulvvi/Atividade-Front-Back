@@ -11,7 +11,7 @@ export default function LoginForm() {
   const [hidePassword, setHidePassword] = useState(false);
 
   return (
-    <div className="absolute w-[326px] h-[108px] flex flex-col top-[410px] justify-between">
+    <div className="absolute w-[326px] h-[108px] flex flex-col top-[410px] pb-2 justify-between">
 
       <div className="flex flex-row relative border-b h-[40px] items-end border-gray-300">
         <img src={mail} className="w-[24px] h-[24px] text-gray-500"/>

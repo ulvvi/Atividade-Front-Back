@@ -13,7 +13,7 @@ export default function Login() {
             <Header title="Entrar"/>
             <img src={Elektro} className="absolute top-[95px] " height={330} width={330}/>
             <LoginForm />
-            <div className="flex flex-column absolute top-[525px] w-[390px] pl-[32px] pr-[32px] justify-end align-top">
+            <div className="flex flex-column absolute top-[522px] w-[390px] pl-[32px] pr-[32px] justify-end align-top">
               <a href="#" className="text-[14px] font-400 text-[#000000] underline">Esqueci minha senha</a>
             </div>
             <Button title="Entrar"/>
