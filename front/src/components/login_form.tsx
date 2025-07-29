@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import lock from '../assets/lock.svg';
-import mail from '../assets/mail.svg';
-import hide from '../assets/hide.svg';
-import show from '../assets/show.svg';
+import lock from "../assets/lock.svg";
+import mail from "../assets/mail.svg";
+import hide from "../assets/hide.svg";
+import show from "../assets/show.svg";
 
 
 export default function LoginForm() {
