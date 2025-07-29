@@ -3,12 +3,14 @@ import { UserController } from "../controllers/userController";
 import { ProductController } from "../controllers/productController";
 import { VendorOnly } from "../middlewares/VendorOnly";
 import { PedidoController } from "../controllers/pedidoController";
+import userValidator from "../config/UserValidator";
+import { ValidateBody } from "../middlewares/ValidateMiddleware";
 
 
 const router = Router()
 
 //User routes
-router.post("/user", UserController.createUser);
+router.post("/user",ValidateBody(userValidator.createUser), UserController.createUser);
 router.get("/user/:userId", UserController.readUser);
 router.get("/users", UserController.readAllUsers);
 router.put("/user/:userId", UserController.updateUser);
