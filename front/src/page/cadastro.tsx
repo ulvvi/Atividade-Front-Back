@@ -20,7 +20,9 @@ export default function Cadastro() {
                 <Input type="Senha" placeholder="Digite sua senha"/>
                 <Input type="Confirme sua senha" placeholder="Confirme sua senha"/>
             </form>
-            <Button title="Cadastrar-se!"/>
+            <div className="absolute w-full flex items-center justify-center top-[720px]">
+                <Button title="Cadastrar-se!"/>
+            </div>
         </div>
     </div>
     );

@@ -16,7 +16,9 @@ export default function Login() {
             <div className="flex flex-column absolute top-[522px] w-[390px] pl-[32px] pr-[32px] justify-end align-top">
               <a href="#" className="text-[14px] font-400 text-[#000000] underline">Esqueci minha senha</a>
             </div>
-            <Button title="Entrar"/>
+            <div className="absolute w-full flex items-center justify-center top-[580px]">
+              <Button title="Entrar"/>
+            </div>
             <a href="#" className="text-[14px] font-400 text-[#0271A0] underline absolute top-[766px]">Não possui cadastro? Cadastre-se!</a>
             <Socialmedia/>
             <p className="text-base absolute top-[627px]">ou</p>
