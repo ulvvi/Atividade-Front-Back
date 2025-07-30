@@ -29,9 +29,9 @@ import smartwatch from '../assets/AssetsHome/smartwatch.svg';
 export default function Login() {
   return (
     <div className="w-full h-full flex flex-row justify-center items-center bg-black">
-        <div className="flex flex-col w-[390px] h-[1600px] bg-[#F5F5F5] border-white box-border items-center">
+        <div className="flex flex-col w-full h-[1600px] bg-[#F5F5F5] border-white box-border items-center overflow-y-auto">
             <div className="flex flex-row fixed items-center justify-between 
-                w-[390px] h-[71px] bg-[#2B2B2B] rounded-b-2xl pl-[32px] pr-[32px] z-10 overflow-hidden overflow-y-visible">
+                w-full h-[71px] bg-[#2B2B2B] rounded-b-2xl pl-[32px] pr-[32px] z-10">
                     <SideMenu/>
                     <img src={cart} alt="Menu" className="w-[24px] h-[24px]"/>
             </div>
@@ -84,7 +84,7 @@ export default function Login() {
                     <Card image={smartwatch} name={"Smartwatch"} price={"900,00"}/>
                 </div>
             </div>
-            <div className="absolute top-[1418px] bg-[#FFAE50] w-[390px] h-[182px] border-box flex justify-center items-center flex-col pb-5 space-y-2">
+            <div className="absolute top-[1418px] bg-[#FFAE50] w-full h-[182px] border-box flex justify-center items-center flex-col pb-5 space-y-2">
                 <p className="text-[#2B2B2B] text-[16px]">Siga-nos nas redes sociais!</p>
                 <img src={socialmediaframe} alt="Social Media Frame" className="w-[152px] h-[24px]"/>
 
