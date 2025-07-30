@@ -1,13 +1,13 @@
 import z from "zod";
 
 const pedido = z.object({
-    price : z.number("price should be a number").min(0, "Price cannot be negative"),
-    state: z.enum(["Em andamento", "Completado", "Cancelado"], "status should be one of PENDING, COMPLETED, or CANCELED"),
-    date: z.string("date should be a string").min(1, "Date is required"),
-    userId: z.string("userId should be a string").uuid("Invalid userId format"),
+    price : z.number("o preço deve ser um numero").min(0, "o preço não pode ser negativo"),
+    state: z.enum(["Em andamento", "Completado", "Cancelado"], "O status deve ser um de: Em andamento, Completado, Cancelado"),
+    date: z.string("A data de postagem deve ser uma string").min(1, "É necessário a data de postagem"),
+    userId: z.uuid("Formato de ID de usuário inválido"),
     products: z.array(z.object({
-        productId: z.string("productId should be a string").uuid("Invalid productId format"),
-    })).min(1, "At least one product is required"),
+        productId: z.uuid("Formato de ID de produto inválido"),
+    })).min(1, "É necessário pelo menos um produto"),
 });
 
 const createPedido = pedido

@@ -1,6 +1,6 @@
 import z from "zod";
 
-const user = z.object({
+const product = z.object({
     name: z.string("name should be a string").min(1, "Name is required"),
     email: z.email("Invalid email format"),
     phone: z.string("phone should be a string").min(10, "Phone number must be at least 10 characters long"),
@@ -9,15 +9,15 @@ const user = z.object({
     validatedVendor: z.boolean().optional(),
 });
 
-const createUser = user
-const readuser = user
-const userParams = z.object({
+const createProduct = product
+const readProduct = product
+const productParams = z.object({
     userId: z.uuid()
 });
 
 export default {
-    createUser,
-    readuser,
-    userParams
+    createProduct,
+    readProduct,
+    productParams
 }
 
