@@ -16,10 +16,10 @@ export default function Card({ image, name, price }: ProductCardProps) {
         <img src={image} alt={name} className="w-[136px] h-[126px] rounded-md" />
         <div className=" w-[136px] flex flex-row">
             <div className="mt-[12px] ml-[5px]">
-                <p className="absolute text-[14px] text-[rgb(43,43,43)]">{name}</p>
-                <p className="text-[16px] mt-[20px] font-bold text-[#2B2B2B]">R${price}</p>
+                <p className="relative text-[14px] text-[rgb(43,43,43)]">{name}</p>
+                <p className="text-[16px] font-bold text-[#2B2B2B]">R${price}</p>
             </div>
-              <div className="absolute mt-[25px] ml-[115px]">
+              <div className="relative mt-8 ml-6">
               <button onClick={() => setIsLiked(!isLiked)} className="rounded-full">
               <img
                 src={isLiked ? Filled : Heart}
