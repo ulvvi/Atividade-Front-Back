@@ -1,8 +1,8 @@
 import cart from '../assets/cart.svg';
 import logo from '../assets/Logo Elektro.svg';
-import Category from '../components/category';
-import Card from '../components/card';
-import Carrosel from '../components/Carrosel';
+import Category from '../components/category.tsx';
+import Card from '../components/card.tsx';
+import Carrosel from '../components/Carrosel.tsx';
 import socialmediaframe from '../assets/socialmediaframe.svg';
 import SideMenu from '../components/SideMenu.tsx';
 
@@ -62,15 +62,14 @@ export default function Login() {
                 
         <div className="absolute w-full top-[605px] h-[800px] flex flex-col">
 
-            <div className="flex flex-col pl-[7%]">
+            
+            <div className="flex flex-col pl-[8%]">
                 <hr className=" absolute w-6/7 border-[#B9B9B9] border-1"></hr>
-                <p className="top-0 start-0 font-medium mt-4 mb-2">Para você</p>
+                <p className="font-medium mt-4 mb-3">Para você</p>
             </div>
 
-            <div className="flex flex-row overflow-x-auto w-full mb-4 h-[200px]">
-                <div className="flex flex-row space-x-5 pl-[7%]">
-                    <Card image={celular} name={"Celular"} price={"800,00"}/>
-                    <Card image={capa} name={"Capa"} price={"20,00"}/>
+            <div className="flex flex-row overflow-x-auto w-full mb-3">
+                <div className="flex flex-row space-x-5 overflow-visible pl-[7%] h-[200px]">
                     <Card image={celular} name={"Celular"} price={"800,00"}/>
                     <Card image={capa} name={"Capa"} price={"20,00"}/>
                 </div>
@@ -81,7 +80,7 @@ export default function Login() {
                 <p className="font-medium mt-4 mb-3">Produtos em destaque</p>
             </div>
 
-            <div className="flex flex-row overflow-x-auto w-full mb-4">
+            <div className="flex flex-row overflow-x-auto w-full mb-3">
                 <div className="flex flex-row space-x-5 overflow-visible pl-[7%] h-[200px]">
                     <Card image={smarttv} name={"Smart TV"} price={"1400,00"}/>
                     <Card image={monitor} name={"Monitor"} price={"750,00"}/>

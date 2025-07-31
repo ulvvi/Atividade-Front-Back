@@ -1,5 +1,18 @@
 import { Prisma, PrismaClient } from "../generated/prisma";
 import { Request, Response } from "express";
+import nodemailer from 'nodemailer';
+import { sendEmail } from './Testemailer'
+
+const transporter = nodemailer.createTransport({
+
+	host: "sandbox.smtp.mailtrap.io",
+	port: 2525,
+	auth: {
+		user: "3622701e495f93",
+		pass: "f13ea9eb54b438",
+	},
+});
+
 
 const prisma = new PrismaClient();
 
@@ -22,7 +35,15 @@ export class UserController {
 				data: createInput,
 			});
 
+			if(!createdUser){
+				return response.status(404).json();
+			}
+
+			///depois de certeza que foi cadastrado, retornar email//
+			sendEmail(createdUser.email, "Cadastro na Elektro", `Olá ${createdUser.name}! /n Obrigado por se cadastrar na Elektro!`)
+
 			response.status(201).json(createdUser);
+			
 		} catch (error: any) {
 			response.status(500).json({ message: error.message });
 		}

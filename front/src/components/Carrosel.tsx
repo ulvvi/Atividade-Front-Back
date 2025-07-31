@@ -11,30 +11,21 @@ export default function ImageCarousel() {
 
   const [currentImg, setCurrentImg] = useState(0);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentImg((prevIndex) => (prevIndex + 1) % images.length);
-    }, 4000);
-
+  useEffect(() => {const interval = setInterval(() => {setCurrentImg((prevIndex) => (prevIndex + 1) % images.length);}, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
-    <div className="absolute top-[143px] w-[327px] h-[210px]">
+    <div className="absolute top-[143px] w-[327px] h-[210px] flex flex-col items-center">
       <img
         src={images[currentImg]}
         alt="Carrosel imagem 1"
         className="w-[327px] h-[191px]"
       />
-      <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
-          <span
-            key={index}
-            className={`block w-3 h-3 rounded-full ${
-              currentImg === index ? 'bg-[#2B2B2B]' : 'bg-[#DEDEDE]'
-            }`}
-          />
-        ))}
+      <div className="flex flex-row space-x-2 mt-2">
+        <div className={`block w-3 h-3 rounded-full ${currentImg === 0 ? 'bg-[#2B2B2B]' : 'bg-[#DEDEDE]'}`} />
+        <div className={`block w-3 h-3 rounded-full ${currentImg === 1 ? 'bg-[#2B2B2B]' : 'bg-[#DEDEDE]'}`} />
+        <div className={`block w-3 h-3 rounded-full ${currentImg === 2 ? 'bg-[#2B2B2B]' : 'bg-[#DEDEDE]'}`} />
       </div>
     </div>
   );

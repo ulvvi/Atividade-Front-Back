@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import menu from '../assets/menu.svg';
+import user from '../assets/AssetsHome/User.svg'
 
 const HamburgerMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -20,8 +21,14 @@ const HamburgerMenu = () => {
       <div
         className={`${
           menuOpen ? 'translate-x-0' : '-translate-x-full'
-        } absolute left-0 w-64 h-screen bg-[#F5F567] transition-transform duration-300 z-20`}
+        } absolute left-0 w-[220px] h-screen bg-[#F5F5F5] transition-transform duration-300 z-20`}
       >
+        <div className="bg-[#2B2B2B] w-full h-[84px] flex items-center">
+          <div className="ml-7 w-full flex">
+            <img src={user} alt="Icone usuario" className="w-[34px] h-[34px]"/>
+            <p className="text-white font-medium text-[20px] mt-0.5 ml-5">Usuário</p>
+          </div>
+        </div>
       </div>
     </div>
   );

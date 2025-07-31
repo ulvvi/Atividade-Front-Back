@@ -8,7 +8,7 @@ import Button from "../components/Button.tsx";
 export default function Cadastro() {
   return (
     <div className="w-screen h-screen flex flex-row justify-center bg-black">
-        <div className="flex flex-col w-screen h-[844px] bg-white border-white box-border items-center">
+        <div className="flex flex-col w-screen h-screen bg-white border-white box-border items-center">
             <Header title="Cadastrar-se"/>
             <Socialmedia/>
             <p className="text-base absolute top-[210px]">ou</p>
@@ -21,7 +21,7 @@ export default function Cadastro() {
                 <Input type="Confirme sua senha" placeholder="Confirme sua senha"/>
             </form>
             <div className="absolute w-full flex items-center justify-center top-[720px]">
-                <Button title="Cadastrar-se!"/>
+                <Button title="Cadastrar-se!" path="/login"/>
             </div>
         </div>
     </div>

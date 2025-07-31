@@ -8,7 +8,6 @@ import LoginForm from "../components/login_form.tsx";
 
 export default function Login() {
   return (
-    <div className="w-screen h-screen flex flex-row justify-center bg-black">
         <div className="flex flex-col w-full h-[844px] bg-white border-white box-border items-center">
             <Header title="Entrar"/>
             <img src={Elektro} className="absolute top-[95px] " height={330} width={330}/>
@@ -17,12 +16,11 @@ export default function Login() {
               <a href="#" className="text-[14px] font-400 text-[#000000] underline">Esqueci minha senha</a>
             </div>
             <div className="absolute w-full flex items-center justify-center top-[580px]">
-              <Button title="Entrar"/>
+              <Button title="Entrar" path="/"/>
             </div>
-            <a href="#" className="text-[14px] font-400 text-[#0271A0] underline absolute top-[766px]">Não possui cadastro? Cadastre-se!</a>
+            <a href="/cadastro" className="text-[14px] font-400 text-[#0271A0] underline absolute top-[766px]">Não possui cadastro? Cadastre-se!</a>
             <Socialmedia/>
             <p className="text-base absolute top-[627px]">ou</p>
           </div>
-    </div>
   );
 }

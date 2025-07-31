@@ -1,14 +1,11 @@
-import Cadastro from "./page/cadastro.tsx"
-import Login from "./page/Login.tsx";
-import Error from "./page/error.tsx";
-import Main from "./page/main.tsx";
+import React from "react";
+import AppRoutes from "./routes/Routes.tsx"
 
 function App() {
   return (
-    <div className="App">
-      <Main/>
+    <div className="app">
+      <AppRoutes/>
     </div>
-  )
+  );
 }
-
 export default App
