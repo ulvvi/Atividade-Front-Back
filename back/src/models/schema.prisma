@@ -11,11 +11,13 @@ datasource db {
 model User {
   id       String    @id @default(uuid()) @unique
   name     String
-  email    String
-  CPF      String
+  email    String    @unique
+  CPF      String    @unique
   adress   String
   age      Int
   phone    String
+  hash String
+  salt String
   isRegisteredVendor Boolean @default(false)
   Pedidos  Pedido[]
   Products Product[]

@@ -6,6 +6,7 @@
 
 
 
+
 @theme {
     --color-primary: #edf7eb;
     --color-secundary: #222831;
@@ -22,6 +23,10 @@
     h2 {
         font-family: 'Russo One', sans-serif;
         font-weight: 400; 
+    }
+    .carousel-item {
+        margin: 0; 
+        padding: 0; 
     }
     
 }

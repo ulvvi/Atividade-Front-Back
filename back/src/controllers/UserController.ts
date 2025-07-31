@@ -1,7 +1,7 @@
 import { Prisma, PrismaClient } from "../generated/prisma";
 import { Request, Response } from "express";
 import nodemailer from 'nodemailer';
-import { sendEmail } from './Testemailer'
+import { sendEmail } from './mailerSend'
 
 const transporter = nodemailer.createTransport({
 
@@ -40,7 +40,7 @@ export class UserController {
 			}
 
 			///depois de certeza que foi cadastrado, retornar email//
-			sendEmail(createdUser.email, "Cadastro na Elektro", `Olá ${createdUser.name}! /n Obrigado por se cadastrar na Elektro!`)
+			sendEmail(createdUser.email, "Cadastro na Elektro", `Olá ${createdUser.name}! Obrigado por se cadastrar na Elektro!`)
 
 			response.status(201).json(createdUser);
 			

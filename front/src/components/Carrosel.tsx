@@ -5,8 +5,8 @@ import car1 from '../assets/car1.png';
 export default function ImageCarousel() {
   const images = [
     car1,
-    'https://example.com/image2.jpg',
-    'https://example.com/image3.jpg',
+    '',
+    '',
   ];
 
   const [currentImg, setCurrentImg] = useState(0);

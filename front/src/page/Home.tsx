@@ -1,10 +1,10 @@
 import cart from '../assets/cart.svg';
 import logo from '../assets/Logo Elektro.svg';
 import Category from '../components/category.tsx';
-import Card from '../components/card.tsx';
 import Carrosel from '../components/Carrosel.tsx';
 import socialmediaframe from '../assets/socialmediaframe.svg';
 import SideMenu from '../components/SideMenu.tsx';
+import { Carousel1, Carousel2, Carousel3 }  from '../components/CarouselSlider.tsx';
 
 //imgaes//
 import celulares from '../assets/AssetsHome/celulares.svg';
@@ -16,14 +16,6 @@ import PCs from '../assets/AssetsHome/PCs.svg';
 import perifericos from '../assets/AssetsHome/Perifericos.svg';
 import smartwatches from '../assets/AssetsHome/Smartwatches.svg';
 
-
-//card images//
-import celular from '../assets/AssetsHome/celular.svg';
-import capa from '../assets/AssetsHome/capa.svg';
-import smarttv from '../assets/AssetsHome/SmartTV.svg';
-import monitor from '../assets/AssetsHome/monitor.svg';
-import smartphone from '../assets/AssetsHome/smartphone.svg';
-import smartwatch from '../assets/AssetsHome/smartwatch.svg';
 
 
 export default function Login() {
@@ -68,44 +60,29 @@ export default function Login() {
                 <p className="font-medium mt-4 mb-3">Para você</p>
             </div>
 
-            <div className="flex flex-row overflow-x-auto w-full mb-3">
-                <div className="flex flex-row space-x-5 overflow-visible pl-[7%] h-[200px]">
-                    <Card image={celular} name={"Celular"} price={"800,00"}/>
-                    <Card image={capa} name={"Capa"} price={"20,00"}/>
-                </div>
-            </div>
+            <Carousel1/>
 
             <div className="flex flex-col pl-[8%]">
                 <hr className=" absolute w-6/7 border-[#B9B9B9] border-1"></hr>
                 <p className="font-medium mt-4 mb-3">Produtos em destaque</p>
             </div>
+            <Carousel2/>
 
             <div className="flex flex-row overflow-x-auto w-full mb-3">
-                <div className="flex flex-row space-x-5 overflow-visible pl-[7%] h-[200px]">
-                    <Card image={smarttv} name={"Smart TV"} price={"1400,00"}/>
-                    <Card image={monitor} name={"Monitor"} price={"750,00"}/>
-                    <Card image={celular} name={"Celular"} price={"800,00"}/>
-                    <Card image={capa} name={"Capa"} price={"20,00"}/>
-                </div>
+
             </div>
+
+            
 
             <div className="pl-[8%]">
                 <hr className=" absolute w-6/7 border-[#B9B9B9] border-1"></hr>
                 <p className="font-medium mt-4 mb-3">Mais vendidos</p>
             </div>
-
-            <div className="flex flex-row overflow-x-auto w-full pl-[7%] h-[200px]">
-                <div className="flex flex-row space-x-5">
-                    <Card image={smartphone} name={"Smartphone"} price={"3200,00"}/>
-                    <Card image={smartwatch} name={"Smartwatch"} price={"900,00"}/>
-                    <Card image={smartphone} name={"Smartphone"} price={"3200,00"}/>
-                    <Card image={smartwatch} name={"Smartwatch"} price={"900,00"}/>
-                </div>
-            </div>
+            <Carousel3/>
         </div>
 
 
-        <div className="absolute top-[1418px] bg-[#FFAE50] w-full h-[182px] border-box flex justify-center items-center flex-col pb-5 space-y-2">
+        <div className="absolute top-[1418px] bg-[#FFAE50] w-full h-[183px] border-box flex justify-center items-center flex-col pb-5 space-y-2">
             <p className="text-[#2B2B2B] text-[16px]">Siga-nos nas redes sociais!</p>
             <img src={socialmediaframe} alt="Social Media Frame" className="w-[152px] h-[24px]"/>
         </div>

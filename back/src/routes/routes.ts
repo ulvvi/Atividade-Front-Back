@@ -18,6 +18,7 @@ router.get("/users", UserController.readAllUsers);
 router.put("/user/:userId", UserController.updateUser);
 router.delete("/user/:userId", UserController.deleteUser);
 router.post("/user/upsert/:userId", UserController.upsertUser);
+router.delete("/users", UserController.deleteAllUsers);
 
 //Product routes
 router.post("/product", VendorOnly, ValidateBody(productValidator.createProduct), ProductController.createProduct);
