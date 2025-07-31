@@ -12,7 +12,7 @@ export default function AppRoutes() {
                 <Route element={<Cadastro />} path="/cadastro" />
                 <Route element={<Login />} path="/login" />
                 <Route element={<Home />} path="/" />
-                <Route element={<Error />} path="/error" />
+                <Route element={<Error />} path="*"/>
             </Routes>
         </Router>
     );

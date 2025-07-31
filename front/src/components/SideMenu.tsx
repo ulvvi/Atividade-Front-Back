@@ -1,19 +1,23 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+
 import menu from '../assets/menu.svg';
 import user from '../assets/AssetsHome/User.svg'
 
 const HamburgerMenu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate()
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
   };
+  const handleClick = () => {navigate("/login")};
 
   return (
-    <div className="mt-1">
+    <div className="">
       <button
         onClick={toggleMenu}
-        className="rounded-md z-20"
+        className="rounded-md z-30"
       >
       <img src={menu} alt="Menu" className="w-[24px] h-[24px]"/>
       </button>
@@ -29,6 +33,18 @@ const HamburgerMenu = () => {
             <p className="text-white font-medium text-[20px] mt-0.5 ml-5">Usuário</p>
           </div>
         </div>
+
+        <div className="w- pl-[7%] pt-[25px] space-y-6 flex flex-col">
+          <p className="font-medium">Editar dados</p>
+          <hr className="w-6/7 border-[#B9B9B9] border-1"></hr>
+          <p className="font-medium mt-">Meus pedidos</p>
+          <hr className="w-6/7 border-[#B9B9B9] border-1"></hr>
+          <p className="font-medium">Meus produtos</p>
+          <hr className=" w-6/7 border-[#B9B9B9] border-1"></hr>
+          <p className="font-medium ">Meu carrinho</p>
+        </div>
+        
+        <button className="absolute font-medium pl-[10%] bottom-[8%]" onClick={handleClick} >Sair</button>
       </div>
     </div>
   );

@@ -32,7 +32,7 @@ export default function LoginForm() {
           onClick={() => setHidePassword(!hidePassword)}
           className=" text-gray-500 focus:outline-none"
         >
-          {hidePassword ? <img  src={hide} className={"mb-[2px]"}/> : <img  src={show} className={"mb-[2px]"}/>}
+          {hidePassword ? <img  src={show} className={"mb-[2px]"}/> : <img  src={hide} className={"mb-[2px]"}/>}
         </button>
       </div>
     </div>

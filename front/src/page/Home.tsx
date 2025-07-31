@@ -55,26 +55,19 @@ export default function Login() {
         <div className="absolute w-full top-[605px] h-[800px] flex flex-col">
 
             
-            <div className="flex flex-col pl-[8%]">
+            <div className="flex flex-col pl-[6%]">
                 <hr className=" absolute w-6/7 border-[#B9B9B9] border-1"></hr>
                 <p className="font-medium mt-4 mb-3">Para você</p>
             </div>
 
             <Carousel1/>
 
-            <div className="flex flex-col pl-[8%]">
+            <div className="flex flex-col pl-[6%]">
                 <hr className=" absolute w-6/7 border-[#B9B9B9] border-1"></hr>
                 <p className="font-medium mt-4 mb-3">Produtos em destaque</p>
             </div>
             <Carousel2/>
-
-            <div className="flex flex-row overflow-x-auto w-full mb-3">
-
-            </div>
-
-            
-
-            <div className="pl-[8%]">
+            <div className="pl-[6%]">
                 <hr className=" absolute w-6/7 border-[#B9B9B9] border-1"></hr>
                 <p className="font-medium mt-4 mb-3">Mais vendidos</p>
             </div>

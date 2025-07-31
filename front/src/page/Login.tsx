@@ -8,7 +8,7 @@ import LoginForm from "../components/login_form.tsx";
 
 export default function Login() {
   return (
-        <div className="flex flex-col w-full h-[844px] bg-white border-white box-border items-center">
+        <div className="flex flex-col w-full h-[844px] bg-[#F5F5F5] border-white box-border items-center">
             <Header title="Entrar"/>
             <img src={Elektro} className="absolute top-[95px] " height={330} width={330}/>
             <LoginForm />
