@@ -17,7 +17,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"name\": \"\",\r\n    \"email\": \"\",\r\n    \"CPF\": \"\",\r\n    \"adress\": \"\",\r\n    \"age\": 1,\r\n    \"phone\": \"\",\r\n    \"isRegisteredVendor\": \"\"\r\n}",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"email\": \"\",\r\n    \"CPF\": \"\",\r\n    \"adress\": \"\",\r\n    \"age\": 1,\r\n    \"phone\": \"\",\r\n    \"isRegisteredVendor\": false,\r\n    \"password\": \"\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"

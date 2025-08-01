@@ -6,7 +6,7 @@ const product = z.object({
         .max(50, "O nome do produto deve ter no máximo 50 caracteres"),
     state: z.enum(["Novo", "Seminovo", "Usado"], "O status deve ser um de: Novo, Seminovo, Usado"),
     ownerId: z.uuid("Formato de ID do vendedor inválido"),
-    date: z.date("formato de data inválido")
+    date: z.string("A data de postagem deve ser uma string").min(1, "É necessário a data de postagem"),
 });
 
 const createProduct = product

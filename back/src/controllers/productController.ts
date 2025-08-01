@@ -38,6 +38,7 @@ export class ProductController {
                 },
                 include: {
                     owner: true,
+                    pedido: true
                 }
             });
 
@@ -50,7 +51,7 @@ export class ProductController {
     public static async readAllProducts(request: Request, response: Response) {
         try {
             const products = await prisma.product.findMany({
-                include: { owner: true }
+                include: { owner: true, pedido: true }
             });
 
             response.status(200).json(products);
