@@ -26,21 +26,21 @@ router.post("/user", ValidateBody(userValidator.createUser), UserController.crea
 router.post("/login", UserController.login)
 router.get("/user/:userId", auth, UserController.readUser);
 router.get("/users", UserController.readAllUsers);
-router.put("/user/:userId", auth, UserController.updateUser);
+router.put("/user/:userId", auth, ValidateBody(userValidator.editUser), UserController.updateUser);
 router.delete("/user/:userId", auth, UserController.deleteUser);
 
 //Product routes
-router.post("/product", VendorOnly, ValidateBody(productValidator.createProduct), ProductController.createProduct);
-router.get("/product/:productId", ProductController.readProduct);
+router.post("/product", auth, VendorOnly, ValidateBody(productValidator.createProduct), ProductController.createProduct);
+router.get("/product/:productId", auth, ProductController.readProduct);
 router.get("/products", ProductController.readAllProducts);
-router.put("/product/:productId", ProductController.updateProduct);
-router.delete("/product/:productId", ProductController.deleteProduct);
+router.put("/product/:productId", auth, ValidateBody(productValidator.editProduct), ProductController.updateProduct);
+router.delete("/product/:productId", auth, ProductController.deleteProduct);
 
 //Pedido routes
-router.post("/pedido", ValidateBody(PedidoValidator.createPedido), PedidoController.createPedido); 
-router.get("/pedido/:pedidoId", PedidoController.readPedido);
-router.get("/pedidos", PedidoController.readAllPedidos);
-router.put("/pedido/:pedidoId", PedidoController.updatePedido);
-router.delete("/pedido/:pedidoId", PedidoController.deletePedido); 
+router.post("/pedido", auth, ValidateBody(PedidoValidator.createPedido), PedidoController.createPedido); 
+router.get("/pedido/:pedidoId", auth, PedidoController.readPedido);
+router.get("/pedidos", auth, PedidoController.readAllPedidos);
+router.put("/pedido/:pedidoId", auth, ValidateBody(PedidoValidator.editPedido), PedidoController.updatePedido);
+router.delete("/pedido/:pedidoId", auth, PedidoController.deletePedido); 
 
 export default router;

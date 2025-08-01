@@ -1,7 +1,12 @@
 import Erro from "../assets/Error.svg";
 import back from "../assets/back.svg";
+import { useNavigate } from "react-router-dom";
+
 
 export default function Login() {
+  const navigate = useNavigate();
+  const handleClick = () => {navigate("/login")};
+  
   return (
     <div className="w-screen h-screen flex flex-row justify-center bg-black">
         <div className="flex flex-col w-full bg-white border-white box-border items-center justify-center">
@@ -14,7 +19,9 @@ export default function Login() {
                 </div>
             </div>
             <div className="absolute top-[759px] w-[325px] flex flex-row justify-end">
-              <img src={back} height={49} width={49}/>
+              <button onClick={handleClick}>
+                <img src={back} height={49} width={49}/>
+              </button>
             </div>
         </div>
     </div>

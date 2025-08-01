@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "c052e49d-1465-4861-96ff-f42b3adb80a2",
+		"name": "Atividade EJCM",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "46785939",
+		"_collection_link": "https://ulvv-2261399.postman.co/workspace/Ulvv's-Workspace~efc0b866-7cb9-48ae-883c-d5f292a9ea47/collection/46785939-c052e49d-1465-4861-96ff-f42b3adb80a2?action=share&source=collection_link&creator=46785939"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "createUser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"email\": \"\",\r\n    \"CPF\": \"\",\r\n    \"adress\": \"\",\r\n    \"age\": 1,\r\n    \"phone\": \"\",\r\n    \"isRegisteredVendor\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"\",\r\n    \"password\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/user",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/user/USER_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user",
+								"USER_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readAllUsers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/users",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"method": "PUT",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/user/USER_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"user",
+								"USER_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "createProduct",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"category\": \"\",\r\n    \"state\": \"\",\r\n    \"ownerId\": \"\",\r\n    \"date\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/product",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readProduct",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/product/PRODUCT_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"product",
+								"PRODUCT_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readAllProducts",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/products",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateProduct",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"\",\r\n    \"category\": \"\",\r\n    \"state\": \"\",\r\n    \"ownerId\": \"\",\r\n    \"date\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/product/PRODUCT_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"product",
+								"PRODUCT_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteProduct",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/product/PRODUCT_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"product",
+								"PRODUCT_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Pedido",
+			"item": [
+				{
+					"name": "createPedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerId\": \"\",\r\n    \"status\": \"\",\r\n    \"price\": 1,\r\n    //podem ser inseridos diversos produtos\r\n    \"products\": [\"productId_1\", \"productId_2\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/pedido",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pedido"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readPedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/pedido/PEDIDO_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pedido",
+								"PEDIDO_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "readAllPedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/pedidos",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pedidos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updatePedido",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerId\": \"\",\r\n    \"status\": \"\",\r\n    \"price\": 1,\r\n    //podem ser inseridos diversos produtos\r\n    \"products\": [\"productId_1\", \"productId_2\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3333/pedido/PEDIDO_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pedido",
+								"PEDIDO_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletePedido",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3333/pedido/PEDIDO_ID_HERE",
+							"host": [
+								"localhost"
+							],
+							"port": "3333",
+							"path": [
+								"pedido",
+								"PEDIDO_ID_HERE"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

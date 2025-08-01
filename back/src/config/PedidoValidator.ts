@@ -11,14 +11,14 @@ const pedido = z.object({
 });
 
 const createPedido = pedido
-const readPedido = pedido
+const editPedido = pedido
 const pedidoParams = z.object({
     pedidoId: z.uuid()
 });
 
 export default {
     createPedido,
-    readPedido,
+    editPedido,
     pedidoParams
 }
 
