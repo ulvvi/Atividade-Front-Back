@@ -7,25 +7,33 @@ import userValidator from "../config/UserValidator";
 import PedidoValidator from "../config/PedidoValidator";
 import productValidator from "../config/ProductValidator"
 import { ValidateBody } from "../middlewares/ValidateMiddleware";
+import configAuth from "../middlewares/authMiddleware";
+import passport from "passport"
 
+//roda a config pelo menos uma vez//
+//talvez não seja necessário mas estava dando erro de não
+//reconhecer o jwt sem isso
+configAuth();
 
 const router = Router()
 
+//faciltar na hora de escrever as rotas
+const auth = passport.authenticate('jwt', {session: false})
+
 //User routes
 router.post("/user", ValidateBody(userValidator.createUser), UserController.createUser);
-router.get("/user/:userId", UserController.readUser);
+//rota de login pa gerar o token
+router.post("/login", UserController.login)
+router.get("/user/:userId", auth, UserController.readUser);
 router.get("/users", UserController.readAllUsers);
-router.put("/user/:userId", UserController.updateUser);
-router.delete("/user/:userId", UserController.deleteUser);
-router.post("/user/upsert/:userId", UserController.upsertUser);
-router.delete("/users", UserController.deleteAllUsers);
+router.put("/user/:userId", auth, UserController.updateUser);
+router.delete("/user/:userId", auth, UserController.deleteUser);
 
 //Product routes
 router.post("/product", VendorOnly, ValidateBody(productValidator.createProduct), ProductController.createProduct);
 router.get("/product/:productId", ProductController.readProduct);
 router.get("/products", ProductController.readAllProducts);
 router.put("/product/:productId", ProductController.updateProduct);
-router.post("/product/upsert/:productId", ProductController.upsertProduct);
 router.delete("/product/:productId", ProductController.deleteProduct);
 
 //Pedido routes
@@ -33,8 +41,6 @@ router.post("/pedido", ValidateBody(PedidoValidator.createPedido), PedidoControl
 router.get("/pedido/:pedidoId", PedidoController.readPedido);
 router.get("/pedidos", PedidoController.readAllPedidos);
 router.put("/pedido/:pedidoId", PedidoController.updatePedido);
-router.post("/pedido/upsert/:pedidoId", PedidoController.upsertPedido);
-router.delete("/pedido/:pedidoId", PedidoController.deletePedido);
-router.delete("/pedidos", PedidoController.deleteAllPedidos); 
+router.delete("/pedido/:pedidoId", PedidoController.deletePedido); 
 
 export default router;

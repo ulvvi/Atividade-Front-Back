@@ -92,44 +92,6 @@ export class PedidoController {
         }
     }
 
-    public static async upsertPedido(request: Request, response: Response) {
-        try {
-            const { pedidoId } = request.params;
-            const { status, price, date, userId, products } = request.body;
-
-            const createInput: Prisma.PedidoCreateInput = {
-                user: {
-                    connect: { id: userId }
-                },
-                status: status,
-                price: price,
-                date: date,
-                products: {
-                    connect: products.map((productId: string) => ({ id: productId }))
-                }
-            };
-
-            const updateInput: Prisma.PedidoUpdateInput = {
-                status: status,
-                price: price,
-                date: date,
-                products: {
-                    connect: products.map((productId: string) => ({ id: productId }))
-                }
-            };
-
-            const upsertedPedido = await prisma.pedido.upsert({
-                where: { id: pedidoId },
-                create: createInput,
-                update: updateInput,
-            });
-
-            response.status(201).json(upsertedPedido);
-        } catch (error: any) {
-            response.status(500).json({ message: error.message });
-        }
-    }
-
     public static async deletePedido(request: Request, response: Response) {
         try {
             const { pedidoId } = request.params;
@@ -139,15 +101,6 @@ export class PedidoController {
             });
 
             response.status(200).json(deletedPedido);
-        } catch (error: any) {
-            response.status(500).json({ message: error.message });
-        }
-    }
-
-    public static async deleteAllPedidos(request: Request, response: Response) {
-        try {
-            const result = await prisma.pedido.deleteMany();
-            response.status(200).json(result);
         } catch (error: any) {
             response.status(500).json({ message: error.message });
         }

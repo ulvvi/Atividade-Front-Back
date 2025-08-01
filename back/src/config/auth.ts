@@ -26,13 +26,16 @@ const generatePassword = (password: string) => {
 
 const generateJWT = (user: any) => {
   const sub = user.email;
+  ///depois de muita pesquisa, deu pa colocar isso como um bonuskkkkkkkk ele tambem passa o ID na payload, para que ele possa checar dps//
+  const id = user.id
   const payload = {
     sub: sub,
+    id: id,
     iat: Math.floor(Date.now() / 1000),
   };
 
   const jwt = jsonwebtoken.sign(payload, PRIV_KEY, {
-    expiresIn: '7d',
+    expiresIn: '10m',
     algorithm: "RS256",
   });
   return jwt;

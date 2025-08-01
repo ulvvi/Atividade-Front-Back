@@ -4,7 +4,8 @@ import passport from "passport"
 import {Strategy, ExtractJwt} from "passport-jwt"
 
 const PUB_KEY = fs.readFileSync(
-    path.join(__dirname, "..", "..", "id_rsa_pub_pem")
+    path.join(__dirname, "..", "..", "id_rsa_pub.pem"),
+    "utf-8"
 )
 
 export default function configAuth() {
@@ -16,12 +17,8 @@ export default function configAuth() {
             ignoreExpiration: false
         },
         (payload, done) => {
-            return done(null, payload.sub);
+            return done(null, { email: payload.sub, loggedId: payload.id });
         }
         )
     );
 }
-
-export const authenticate = passport.authenticate("jwt", {
-    session: false,
-});

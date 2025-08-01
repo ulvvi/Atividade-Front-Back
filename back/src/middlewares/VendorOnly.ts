@@ -1,5 +1,12 @@
 import { Request, Response, NextFunction } from "express";
-import { PrismaClient } from "../generated/prisma";       
+import { PrismaClient } from "../generated/prisma";    
+
+//feito durante a aula de middlewares, serve para apenas limitar o post de produtos
+//que o o id de usuario associado é um vendedor registrado
+
+//similar a olx ou mercadolivre, que pra vender o metodo de registro é diferente e mais rigido
+
+//fica ae como um bonus, pois achei interessante 
 
 export async function VendorOnly(request:Request, response:Response, next:NextFunction) {
     try {

@@ -85,43 +85,6 @@ export class ProductController {
         }
     }
 
-    public static async upsertProduct(request: Request, response: Response) {
-        try {
-            const { productId } = request.params;
-            const { name, category, state, ownerId, date } = request.body;
-
-            const createInput: Prisma.ProductCreateInput = {
-                name: name,
-                category: category,
-                state: state,
-                date: date,
-                owner: {
-                    connect: { id: ownerId }
-                }
-            };
-
-            const updateInput: Prisma.ProductUpdateInput = {
-                name: name,
-                category: category,
-                state: state,
-                date: date,
-                owner: {
-                    connect: { id: ownerId }
-                }
-            };
-
-            const upsertedProduct = await prisma.product.upsert({
-                where: { id: productId },
-                create: createInput,
-                update: updateInput,
-            });
-
-            response.status(201).json(upsertedProduct);
-        } catch (error: any) {
-            response.status(500).json({ message: error.message });
-        }
-    }
-
     public static async deleteProduct(request: Request, response: Response) {
         try {
             const { productId } = request.params;
@@ -131,15 +94,6 @@ export class ProductController {
             });
 
             response.status(200).json(deletedProduct);
-        } catch (error: any) {
-            response.status(500).json({ message: error.message });
-        }
-    }
-
-    public static async deleteAllProducts(request: Request, response: Response) {
-        try {
-            const result = await prisma.product.deleteMany();
-            response.status(200).json(result);
         } catch (error: any) {
             response.status(500).json({ message: error.message });
         }
